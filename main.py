@@ -4,7 +4,6 @@ from SimulationSetup.ScenarioGenerator import *
 def main():
     scenario = ScenarioGenerator()
     scenario.CreateScenario()
-    
     print("python main functionaaaaaaaaaaaaaaaaaaaaaaaaaa")
 
 
