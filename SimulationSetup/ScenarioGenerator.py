@@ -8,7 +8,7 @@ class ScenarioGenerator:
             self.minDistanceGFsGFs = 300
             self.minDistanceGFsThreats = 800
             self.minDistanceGFsGCs = 500
-            self.minDistanceThreatsThreats = 700
+            self.minDistanceThreatsThreats = 2*700
             self.minDistanceThreatsGCS = 700
 
             self.nThreats = 5
@@ -18,6 +18,7 @@ class ScenarioGenerator:
              self._CreateUAVs()
              self._CreateGFs()
              self._CreateThreats()
+             self.scenario.Plot()
     
         def _CreateThreats(self, nThreats=10):
              i = 0
@@ -43,7 +44,7 @@ class ScenarioGenerator:
             x0 = -1
             y0 = -1
             i = 500
-            while True and i > 0:
+            while True: #and i > 0:
                 valid = True
                 x0,y0 = GenerateRandomPosition(xlim, ylim)
                 if EuclidianDistance(x0,y0,gcs_x,gcs_y) < self.minDistanceThreatsGCS:
@@ -53,7 +54,7 @@ class ScenarioGenerator:
                         valid = False
                         break
                 for threat in threats:
-                    if EuclidianDistance(x0,y0,threat.cx,threat.cy) < self.minDistanceThreatsThreats:
+                    if EuclidianDistance(x0,y0,threat.cx,threat.cy) < threat.detectionRange:
                         valid = False
                         break
                 if valid:

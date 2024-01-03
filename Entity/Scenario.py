@@ -3,7 +3,7 @@ from Entity.GroundControlStation import *
 from Entity.UAV import *
 from Entity.GroundForce import *
 from Entity.RiskMap import *
-
+import matplotlib.pyplot as plt
 
 class Scenario:
 
@@ -23,3 +23,21 @@ class Scenario:
         self.riskMap = riskMap
         self.xlim = xlim
         self.ylim = ylim
+
+
+    def Plot(self):
+        
+        #Plot GCS
+        self.gcs.Plot()
+        #Plot UAVs
+        for uav in self.uavs:
+            uav.Plot()
+        #Plot GFs
+        for gf in self.gfs:
+            gf.Plot()
+        #Plot Threats
+        for threat in self.threats:
+            threat.Plot()
+
+        plt.show()
+        plt.waitkey(-1)

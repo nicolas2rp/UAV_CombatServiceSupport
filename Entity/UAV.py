@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+
+
 class UAV:
 
     id = None
@@ -16,3 +19,12 @@ class UAV:
         self.y = y        
         self.gfsToVisit = gfsToVisit
         self.alive = alive
+
+    def Plot(self):
+        if self.alive:
+            plt.plot(self.x, self.y, '.k', markersize=20) 
+        else:
+            plt.plot(self.x, self.y, '.x', markersize=20) 
+
+        plt.text(self.x - 150, self.y + 150, f'UAV-{self.id}')
+
