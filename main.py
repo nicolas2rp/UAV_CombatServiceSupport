@@ -1,9 +1,10 @@
 import numpy as np
-from Entity.Scenario import *
-
+from SimulationSetup.ScenarioGenerator import *
 
 def main():
-    scenario = Scenario()
+    scenario = ScenarioGenerator()
+    scenario.CreateScenario()
+    
     print("python main functionaaaaaaaaaaaaaaaaaaaaaaaaaa")
 
 

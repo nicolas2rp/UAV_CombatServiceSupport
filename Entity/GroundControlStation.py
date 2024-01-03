@@ -1,8 +1,8 @@
-class GCS:
+class GroundControlStation:
 
     x = None
     y = None
 
-    def __init__(self,x=0, y=0):
+    def __init__(self,x=1, y=1):
         self.x = x
         self.y = y

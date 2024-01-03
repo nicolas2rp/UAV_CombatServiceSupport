@@ -1,4 +1,4 @@
-class GF:
+class GroundForce:
 
     id = None
     visited = None
